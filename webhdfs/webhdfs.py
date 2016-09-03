@@ -70,7 +70,7 @@ class WebHDFS(object):
         msg = response.msg
 
         if msg["location"].find("http://localhost") == 0:
-            msg["location"].replace("http://localhost", "http://" + self.namenode_host)
+            msg["location"] = msg["location"].replace("http://localhost", "http://" + self.namenode_host)
             pass
 
         redirect_location = msg["location"]
